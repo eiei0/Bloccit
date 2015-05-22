@@ -1,6 +1,7 @@
 require 'faker'
  
 unique_post = 'This is a unique post'
+unique_comment = 'This is a unique comment'
 
 50.times do
  Post.create!(
@@ -21,6 +22,10 @@ Post.create_with(body: Faker::Lorem.paragraph).find_or_create_by(title: unique_p
    post: posts.sample,
    body: Faker::Lorem.paragraph
  )
+end
+
+unless Post.where(comment: unique_comment).exists?
+  Post.create!(comment: unique_comment)
 end
 
 puts "Seed finished"
