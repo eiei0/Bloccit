@@ -24,8 +24,8 @@ Post.create_with(body: Faker::Lorem.paragraph).find_or_create_by(title: unique_p
  )
 end
 
-unless Post.where(comment: unique_comment).exists?
-  Post.create!(comment: unique_comment)
+unless Comment.where(comment: unique_comment).exists?
+  Comment.create!(comment: unique_comment)
 end
 
 puts "Seed finished"
