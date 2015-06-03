@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :posts, :advertisement
+  resources :posts, except: [:show]
 
   get 'about' => 'welcome#about'
 
