@@ -9,12 +9,12 @@
 </head>
 <body>
   <div class="container">
-    <ul>
-    <ul class='nav nav-tabs>
+    <ul class='nav nav-tabs'>
         <li><%= link_to "Bloccit", root_path %></li>
         <li><%= link_to "About", about_path %></li>
    </ul>
 
+<<<<<<< HEAD
        <% if flash[:notice] %>
          <div class="alert alert-success">
            <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -32,6 +32,9 @@
          </div>
        <% end %>
 <%= yield %>
+=======
+    <%= yield %>
+>>>>>>> checkpoint-UserAuthentication
   </div>
 
 </body>
