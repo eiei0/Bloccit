@@ -1,0 +1,6 @@
+<h1><%= @questions.title %></h1>
+ 
+ <%= link_to "Edit", edit_question_path(@questions), class: 'btn btn-success' %>
+ 
+<p><%= @questions.body %></p>
+<p><%= @questions.resolved ? 'Completed' : 'Not Completed' %></p>
