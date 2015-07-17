@@ -44,7 +44,7 @@ end
 user = User.first
 user.skip_reconfirmation!
 user.update_attributes!(
-  email: 'youremail.com',
+  email: 'j0nnyappleseed000@mac.com',
   password: 'helloworld'
   )
 
