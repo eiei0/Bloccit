@@ -46,12 +46,32 @@ unless Comment.where(body: unique_comment).exists?
   Comment.create!(body: unique_comment, post: posts.sample)
 end
 
-user = User.first
-user.skip_reconfirmation!
-user.update_attributes!(
-  email: 'j0nnyappleseed000@mac.com',
-  password: 'helloworld'
-  )
+admin = User.new(
+   name:     'Admin User',
+   email:    'admin@example.com',
+   password: 'helloworld',
+   role:     'admin'
+ )
+ admin.skip_confirmation!
+ admin.save!
+ 
+ moderator = User.new(
+   name:     'Moderator User',
+   email:    'moderator@example.com',
+   password: 'helloworld',
+   role:     'moderator'
+ )
+ moderator.skip_confirmation!
+ moderator.save!
+ 
+ member = User.new(
+   name:     'Member User',
+   email:    'member@example.com',
+   password: 'helloworld'
+ )
+ member.skip_confirmation!
+ member.save!
+  
 
 puts "Seed finished"
 puts "#{User.count} users created"
