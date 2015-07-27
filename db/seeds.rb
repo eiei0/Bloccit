@@ -1,7 +1,4 @@
 require 'faker'
- 
-unique_post = 'This is a unique post'
-unique_comment = 'This is a unique comment'
 
 5.times do
   user = User.new(
@@ -11,28 +8,26 @@ unique_comment = 'This is a unique comment'
     )
     user.skip_confirmation!
     user.save!
-  end
-  users = User.all
+end
+users = User.all
+
+15.times do
+  Topic.create!(
+    name:         Faker::Lorem.sentence,
+    description:  Faker::Lorem.paragraph
+    )
+end
+topics = Topic.all
 
 50.times do
    Post.create!(
      user:   users.sample,
+     topic: topics.sample,
      title:  Faker::Lorem.sentence,
      body:   Faker::Lorem.paragraph
-   )
-   end
-posts = Post.all
-
-unless Post.where(title: unique_post).exists?
-  Post.create!(title: unique_post, body: Faker::Lorem.paragraph)
+    )
 end
-
-Post.create(user: User.first, body: 'text here')
-
-
-user = users.sample
-
-user.posts.create_with(body: Faker::Lorem.paragraph).find_or_create_by(title: unique_post)
+posts = Post.all
 
 100.times do
  Comment.create!(
@@ -42,9 +37,7 @@ user.posts.create_with(body: Faker::Lorem.paragraph).find_or_create_by(title: un
  )
 end
 
-unless Comment.where(body: unique_comment).exists?
-  Comment.create!(body: unique_comment, post: posts.sample)
-end
+
 
 admin = User.new(
    name:     'Admin User',
