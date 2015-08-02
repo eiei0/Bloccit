@@ -78,5 +78,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #https://test-bloccit.herokuapp.com
-  config.action_mailer.default_url_options = { host: 'bloccit.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'test-bloccit.herokuapp.com' }
 end
