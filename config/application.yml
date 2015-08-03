@@ -1,6 +1,5 @@
-SENDGRID_PASSWORD: exAmplePa$$
-SENDGRID_USERNAME: myspecialusername
-
+SENDGRID_PASSWORD: n0ejgvkm
+SENDGRID_USERNAME: app24302077@heroku.com
 # Add configuration values here, as shown below.
 #
 # pusher_app_id: "2954"
