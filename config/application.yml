@@ -1,5 +1,11 @@
 SENDGRID_PASSWORD: 1rx0ce7k4112
 SENDGRID_USERNAME: app39763621@heroku.com
+AWS_ACCESS_KEY_ID: AKIAJ5RK3ZH7MOA3IRYQ
+AWS_SECRET_ACCESS_KEY: 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
+development:
+  AWS_BUCKET: jonathan-bloccit-development
+production:
+  AWS_BUCKET: jonathan-bloccit-production
 # Add configuration values here, as shown below.
 #
 # pusher_app_id: "2954"
