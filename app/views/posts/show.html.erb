@@ -15,3 +15,8 @@
     <% end %>
   </div>
 </div>
+
+<% @comments.each do |comment| %>
+  <p><%= comment.body %></p>
+<% end %>
+<%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>

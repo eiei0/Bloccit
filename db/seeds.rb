@@ -31,13 +31,13 @@ posts = Post.all
 
 100.times do
  Comment.create!(
-  # user: users.sample,   # we have not yet associated Users with Comments
+   user: users.sample,   
    post: posts.sample,
    body: Faker::Lorem.paragraph
  )
 end
 
-
+# Comment.create(body: Faker::Lorem.sentence, post_id: posts.sample, user_id: users.sample)
 
 admin = User.new(
    name:     'Admin User',
