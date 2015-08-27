@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :posts, only: [] do
      post '/up-vote' => 'votes#up_vote', as: :up_vote
      post '/down-vote' => 'votes#down_vote', as: :down_vote
+     resources :comments, only: [:create, :destroy]
+     resources :favorites, only: [:create, :destroy]
   end
 
 
