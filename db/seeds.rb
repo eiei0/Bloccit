@@ -63,7 +63,7 @@ admin = User.new(
  
  member = User.new(
    name:     'Member User',
-   email:    'member@example.com',
+   email:    'j0nnyappleseed000@mac.com',
    password: 'helloworld'
  )
  member.skip_confirmation!
