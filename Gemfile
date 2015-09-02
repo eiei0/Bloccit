@@ -24,6 +24,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'will_paginate'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -51,6 +52,7 @@ group :development, :test do
   gem 'spring', '~> 1.3.4'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :production do
