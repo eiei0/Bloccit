@@ -11,16 +11,17 @@ class UsersController < ApplicationController
    end
  end
 
+ def show
+  @user = User.find(params[:id])
+  @posts = @user.posts.visible_to(current_user)
+  @comments = @user.comments
+ end
+
  private
 
  def user_params
    params.require(:user).permit(:name, :avatar)
  end
 
- def show
-  @user = User.find(params[:id])
-  @posts = @user.posts.visible_to(current_user)
-  @comments = @user.comments
- end
 
 end
