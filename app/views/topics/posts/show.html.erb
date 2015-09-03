@@ -28,8 +28,9 @@
   </div>
 </div>
 
-<% @comments.each do |comment| %>
-  <%= render partial: 'comments/comment', collection: @comments %>
-<% end %>
-
+<div class='js-comments'>
+<%= render partial: 'comments/comment', collection: @comments %>
+</div>
+<div class='new-comment'>
 <%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
+</div>
