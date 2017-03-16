@@ -13,7 +13,6 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     authorize @topic
     @posts = @topic.posts.includes(:user).includes(:comments).paginate(page: params[:page], per_page: 10)
-   end
   end
 
   def edit
@@ -43,13 +42,14 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-     @topic = Topic.find(params[:id])
-     authorize @topic
-     if @topic.destroy
-       flash[:notice] = "The topic was removed successfully."
-       redirect_to topics_path
-     else
-       flash[:error] = "There was an error removing the topic. Please try again."
-       render :show
-     end
-   end
+    @topic = Topic.find(params[:id])
+    authorize @topic
+    if @topic.destroy
+      flash[:notice] = "The topic was removed successfully."
+      redirect_to topics_path
+    else
+      flash[:error] = "There was an error removing the topic. Please try again."
+      render :show
+    end
+  end
+end
