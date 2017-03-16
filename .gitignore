@@ -14,3 +14,6 @@
 
 # CarrierWave image
 public/uploads
+
+# SimpleCov coverage results directory
+/coverage
